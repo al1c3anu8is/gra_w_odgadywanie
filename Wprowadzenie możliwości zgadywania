@@ -1,0 +1,8 @@
+Trzecia część: Wprowadzanie Zgadywania
+
+def wprowadz_zgadywanie(dlugosc_szyfru): #Definiuje funkcję o nazwie wprowadz_zgadywanie, która przyjmuje jeden argument dlugosc_szyfru
+    while True: #kiedy prawda to:
+        strona_zgadywania = input(f"Wprowadź swój szyfr ({dlugosc_szyfru} cyfr): ") #czeka na wprowadzenie szyfru przez gracza
+        if len(strona_zgadywania) == dlugosc_szyfru and strona_zgadywania.isdigit(): #sprawdza czy długości szyfrów się zgadzają
+            return [int(cyfra) for cyfra in strona_zgadywania] #przekształca wprowadzone cyfry na listę liczb całkowitych
+        print(f"Proszę wprowadzić dokładnie {dlugosc_szyfru} cyfr.") #jeżeli 'if' nie został spełniony to wyświetla komunikat o błędnym wprowadzeniu danych
