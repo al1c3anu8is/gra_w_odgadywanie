@@ -18,3 +18,9 @@ def ocen_zgadanie(kod, zgadywanie):
     miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
     cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
     return miejsca_poprawne, cyfry_poprawne
+
+def tryb_dla_graczy(dlugosc_szyfru):
+    """Tryb dla dwóch graczy - pierwszy gracz wprowadza kod"""
+    print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfr, zapisz go lub zapamiętaj): ", end="")
+    kod = [int(cyfra) for cyfra in input().strip()]
+    return kod
