@@ -20,7 +20,6 @@ def ocen_zgadanie(kod, zgadywanie):
     return miejsca_poprawne, cyfry_poprawne
 
 def tryb_dla_graczy(dlugosc_szyfru):
-    """Tryb dla dwóch graczy - pierwszy gracz wprowadza kod"""
     print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfr, zapisz go lub zapamiętaj): ", end="")
     kod = [int(cyfra) for cyfra in input().strip()]
     return kod
@@ -28,3 +27,15 @@ def tryb_dla_graczy(dlugosc_szyfru):
 def tryb_komputerowy(dlugosc_szyfru):
     print("Kod wygenerowany przez komputer.")
     return tworzenie_kodu(dlugosc_szyfru)
+    def przebieg_gry(tryb_gry, dlugosc_szyfru):
+    if tryb_gry == 1:
+        kod = tryb_dla_graczy(dlugosc_szyfru)
+    else:
+        kod = tryb_komputerowy(dlugosc_szyfru)
+
+    liczba_prob = 0  
+
+    while True:
+        zgadywanie = wprowadz_zgadywanie(dlugosc_szyfru)  
+        liczba_prob += 1 
+        miejsca_poprawne, cyfry_poprawne = ocen_zgadanie(kod, zgadywanie)
