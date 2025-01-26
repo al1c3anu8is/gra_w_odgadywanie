@@ -40,11 +40,19 @@ def tryb_komputerowy(dlugosc_szyfru):
         liczba_prob += 1 
         miejsca_poprawne, cyfry_poprawne = ocen_zgadanie(kod, zgadywanie)
 
-    #Wyświetla ilość poprawnych cyfr w szyfrze na swoich miejscach i te na nie swoich miejscach
+    
         print(f"Cyfr na właściwych miejscach: {miejsca_poprawne}")
         print(f"Cyfr w kodzie, ale nie na swoich miejscach: {cyfry_poprawne}")
 
-    #Koniec gry jeśli grasz podał poprawny szyfr
+    
         if miejsca_poprawne == dlugosc_kodu:
             print(f"Gratulacje! Odgadłeś kod w {liczba_prob} próbach.")
             break
+
+def main():
+    """Funkcja uruchamiająca całą grę"""
+    tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
+    przebieg_gry(tryb_gry, dlugosc_szyfru) 
+
+if __name__ == "__main__":
+    main() 
