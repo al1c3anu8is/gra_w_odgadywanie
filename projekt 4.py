@@ -24,3 +24,7 @@ def tryb_dla_graczy(dlugosc_szyfru):
     print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfr, zapisz go lub zapamiętaj): ", end="")
     kod = [int(cyfra) for cyfra in input().strip()]
     return kod
+
+def tryb_komputerowy(dlugosc_szyfru):
+    print("Kod wygenerowany przez komputer.")
+    return tworzenie_kodu(dlugosc_szyfru)
