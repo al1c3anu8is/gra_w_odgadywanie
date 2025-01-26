@@ -1,0 +1,6 @@
+
+def tryb_dla_graczy(dlugosc_kodu):
+    """Tryb dla dwóch graczy - pierwszy gracz wprowadza kod"""
+    podpowiedz = f"Gracz pierwszy: Wprowadź kod ({dlugosc_kodu} cyfr, zapisz go lub zapamiętaj): "
+    kod = input(podpowiedz).strip() #że do zmiennej kod zapisywany jest wprowadzony przez użytkownika ciąg znaków
+    return [int(cyfra) for cyfra in kod if cyfra.isdigit() and len(cyfra) <= dlugosc_kodu]
