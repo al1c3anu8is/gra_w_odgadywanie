@@ -10,7 +10,7 @@ def tworzenie_kodu(dlugosc_szyfru):
     
 def wprowadz_zgadywanie(dlugosc_szyfru):
     while True:
-        strona_zgadywania = input(f"Wprowadź swój szyfr ({dlugosc_szyfru} cyfr): ")
+        strona_zgadywania = input(f"Wprowadź swój szyfr ({dlugosc_szyfru} cyfrowy): ")
         if len(strona_zgadywania) == dlugosc_szyfru and strona_zgadywania.isdigit():
             return [int(cyfra) for cyfra in strona_zgadywania]
         print(f"Proszę wprowadzić dokładnie {dlugosc_szyfru} cyfr.")
@@ -21,7 +21,7 @@ def ocen_zgadanie(kod, zgadywanie):
     return miejsca_poprawne, cyfry_poprawne
 
 def tryb_dla_graczy(dlugosc_szyfru):
-    print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfr, zapisz go lub zapamiętaj): ", end="")
+    print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfrowy, zapisz go lub zapamiętaj): ", end="")
     kod = [int(cyfra) for cyfra in input().strip()]
     return kod
 
@@ -42,8 +42,8 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
         miejsca_poprawne, cyfry_poprawne = ocen_zgadanie(kod, zgadywanie)
 
     
-        print(f"Cyfr na właściwych miejscach: {miejsca_poprawne}")
-        print(f"Cyfr w kodzie, ale nie na swoich miejscach: {cyfry_poprawne}")
+        print(f"Cyfry na właściwych miejscach: {miejsca_poprawne}")
+        print(f"Cyfry w kodzie, ale nie na swoich miejscach: {cyfry_poprawne}")
 
     
         if miejsca_poprawne == dlugosc_szyfru:
@@ -51,7 +51,6 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
             break
 
 def main():
-    """Funkcja uruchamiająca całą grę"""
     tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
     przebieg_gry(tryb_gry, dlugosc_szyfru) 
 
