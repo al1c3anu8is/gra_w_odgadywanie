@@ -1,4 +1,4 @@
-Szósta część: Tryb gry z komputerem
+Tryb gry z komputerem:
 
 def tryb_komputerowy(dlugosc_szyfru): #definiuje funkcję, która przyjmuje argument 'dlugosc_szyfru'
     print("Kod wygenerowany przez komputer.")
@@ -6,7 +6,7 @@ def tryb_komputerowy(dlugosc_szyfru): #definiuje funkcję, która przyjmuje argu
 
 
 
-Dodatek do siódmej części:
+Działanie gry końcówka:
 
       print(f"Cyfr na właściwych miejscach: {miejsca_poprawne}") ##wyświetla ilość odgadniętych cyfr na swoich miejscach z tych, które wcześniej podał gracz
       print(f"Cyfr w kodzie, ale nie na swoich miejscach: {cyfry_poprawne}") #wyświetla ilość odgadniętych cyfr, ale nie na swoich miejscach, z tych, które wcześniej podał gracz
