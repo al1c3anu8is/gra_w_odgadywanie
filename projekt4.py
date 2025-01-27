@@ -35,7 +35,10 @@ def wprowadz_zgadywanie(dlugosc_szyfru):
         print(f"Proszę wprowadzić dokładnie {dlugosc_szyfru} cyfr.")
 
 def ocena_zgadywanie(kod, zgadywanie):
-      """
+    miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
+    cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
+    return miejsca_poprawne, cyfry_poprawne
+     """
     Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrie znajduje się na właściwych miejscach,
     oraz ile cyfr jest obecnych w szyfriie, ale na niewłaściwych miejscach.
 
@@ -56,11 +59,6 @@ def ocena_zgadywanie(kod, zgadywanie):
     - miejsca_poprawne: 2 (pierwsza i czwarta cyfra: 1 i 4)
     - cyfry_poprawne: 2 (trzecia cyfra 3 oraz druga cyfra 5 znajdują się w kodzie, ale na innych miejscach w szyfrze)
     """
-    if len(kod) != len(zgadywanie):
-    raise ValueError("Długości kodu i zgadywania muszą być takie same!")
-    miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
-    cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
-    return miejsca_poprawne, cyfry_poprawne
 
 def tryb_dla_graczy(dlugosc_szyfru):
     from getpass import getpass
