@@ -1,5 +1,5 @@
 # gra_w_odgadywanie
-Projekt na programowanie 2025
+
 Osoby odpowiedzialne za projekt:
 - Agnieszka Musiał (287391) - amusial14
 - Kornelia Hubner (278946) - korneliahubn
