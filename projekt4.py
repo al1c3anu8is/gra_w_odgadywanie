@@ -51,7 +51,7 @@ def tworzenie_kodu(dlugosc_szyfru):
     return [random.randint(0, 9) for _ in range(dlugosc_szyfru)]
     
 def wprowadz_zgadywanie(dlugosc_szyfru):
-     """
+    """
     Funkcja umożliwia użytkownikowi wprowadzenie szyfru o określonej długości. 
 
     Przyjmuje wyłącznie cyfry, a liczba wprowadzonych cyfr musi być zgodna z podaną długością. 
