@@ -25,6 +25,29 @@ def powitanie_i_parametry():
     """
 
 def tworzenie_kodu(dlugosc_szyfru):
+    """
+    Tworzenie losowego szyfru o podanej liczbie cyfr.
+    Funkcja generuje listę liczb całkowitych, które są cyframi w przedziale od 0 do 9.
+
+    Parametry:
+        dlugosc_szyfru (int): Liczba cyfr w generowanym kodzie.
+
+    Zwraca:
+        list:
+         - Lista liczb całkowitych reprezentujących losowy kod.
+
+    Raises:
+        ValueError: Jeśli podano liczbę mniejszą niż 1 jako `dlugosc_szyfru`.
+
+    Przykłady:
+        >>> tworzenie_kodu(4)
+        [3, 8, 1, 5]  # Przykład szyfru czterocyfrowego
+        >>> tworzenie_kodu(6) # Przykład szyfru sześciocyfrowego
+        [0, 9, 4, 7, 2, 6]
+    """
+    if dlugosc_szyfru < 1:
+        raise ValueError("Długość kodu musi być większa lub równa 1.")
+
     return [random.randint(0, 9) for _ in range(dlugosc_szyfru)]
     
 def wprowadz_zgadywanie(dlugosc_szyfru):
@@ -38,7 +61,7 @@ def ocena_zgadywanie(kod, zgadywanie):
     miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
     cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
     return miejsca_poprawne, cyfry_poprawne
-     """
+    """
     Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrie znajduje się na właściwych miejscach,
     oraz ile cyfr jest obecnych w szyfriie, ale na niewłaściwych miejscach.
 
@@ -87,6 +110,36 @@ def tryb_komputerowy(dlugosc_szyfru):
     return tworzenie_kodu(dlugosc_szyfru)
     
 def przebieg_gry(tryb_gry, dlugosc_szyfru):
+    """
+    Gracz zgaduje kod wprowadzony przez drugiego gracza lub wygenerowany przez komputer.
+
+    Funkcja odpowiada za przebieg gry, od momentu wyboru kodu (w zależności od trybu gry z komputerem lub gry dwóch uczestników ) po zgadywanie kodu przez gracza. 
+    Każda próba gracza jest oceniana, a gra kończy się, gdy kod zostanie poprawnie odgadnięty.
+
+    Parametry:
+        tryb_gry (int): Tryb gry, gdzie:
+            - `1` oznacza grę dwóch graczy (jednen gracz wprowadza wymyślony szyfr, a drugi gracz zgaduje kod ),
+            - `2` oznacza grę z komputerem (kod generowany losowo przez komputer).
+        dlugosc_szyfru (int): Liczba cyfr w kodzie do odgadnięcia.
+
+    Raises:
+        ValueError: Jeśli `tryb_gry` nie jest równy 1 lub 2.
+        ValueError: Jeśli `dlugosc_szyfru` jest mniejsze niż 1.
+
+    Zwraca:
+        None: Funkcja nie zwraca wartości, wyłącznie wyświetla informacje o przebiegu gry.
+
+    Przykłady:
+        >>> przebieg_gry(1, 4)
+        W grze dwóch graczy gracz pierwszy wprowadza kod.
+        Gracz drugi zgaduje kod i otrzymuje wskazówki, aż do poprawnego odgadnięcia.
+        >>> przebieg_gry(2, 3)
+        Komputer generuje kod o długości 3 cyfr. Gracz zgaduje kod, a gra kończy się sukcesem po odgadnięciu szyfru.
+
+    """
+    if tryb_gry not in (1, 2):
+        raise ValueError("Niepoprawny tryb gry. Wybierz 1 (gra dwóch graczy) lub 2 (gra z komputerem).")
+    
     if tryb_gry == 1:
         kod = tryb_dla_graczy(dlugosc_szyfru)
     else:
@@ -95,9 +148,9 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
     liczba_prob = 0  
 
     while True:
-        zgadywanie = wprowadz_zgadywanie(dlugosc_szyfru)  
+        zgadywanie = wprowadz_zgadywanie(dlugosc_szyfru) 
         liczba_prob += 1 
-        miejsca_poprawne, cyfry_poprawne = ocena_zgadywanie(kod, zgadywanie)
+        miejsca_poprawne, cyfry_poprawne = ocena_zgadywanie(kod, zgadywanie)  
 
     
         print(f"Cyfry na właściwych miejscach: {miejsca_poprawne}")
