@@ -51,6 +51,24 @@ def tworzenie_kodu(dlugosc_szyfru):
     return [random.randint(0, 9) for _ in range(dlugosc_szyfru)]
     
 def wprowadz_zgadywanie(dlugosc_szyfru):
+     """
+    Funkcja umożliwia użytkownikowi wprowadzenie szyfru o określonej długości. 
+
+    Przyjmuje wyłącznie cyfry, a liczba wprowadzonych cyfr musi być zgodna z podaną długością. 
+    W przypadku błędnego wprowadzenia, funkcja wyświetla komunikat i prosi o ponowne wprowadzenie szyfru.
+
+    Zwracane parametry:
+    -int list - lista liczb całkowitych w odgadywanym kodzie
+
+    Przykład użycia:
+    # Długość szyfru wynosi 4
+    dlugosc_szyfru = 4
+
+    # Wywołanie funkcji
+    szyfr = wprowadz_zgadywanie(dlugosc_szyfru)
+
+    print(f"Podano szyfr: {szyfr}")
+    """
     while True:
         strona_zgadywania = input(f"Wprowadź swój szyfr ({dlugosc_szyfru} cyfrowy): ")
         if len(strona_zgadywania) == dlugosc_szyfru and strona_zgadywania.isdigit():
@@ -106,6 +124,17 @@ def tryb_dla_graczy(dlugosc_szyfru):
     """
 
 def tryb_komputerowy(dlugosc_szyfru):
+    """
+    Generuje kod w trybie  gry z komputerem.
+
+    Funkcja symuluje generowanie kodu przez komputer, a następnie zwraca ten kod.
+    
+    Parametry:
+    dlugosc_szyfru (int): liczba określająca długość szyfru, który ma zostać wygenerowany.
+
+    Zwraca:
+    liste: lista liczb całkowitych reprezentujących wygenerowany kod.
+    """
     print("Kod wygenerowany przez komputer.")
     return tworzenie_kodu(dlugosc_szyfru)
     
