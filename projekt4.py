@@ -1,3 +1,4 @@
+import random
 def powitanie_i_parametry():
     print("Witaj w grze w odgadywanie!")
     tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
@@ -27,7 +28,7 @@ def tryb_dla_graczy(dlugosc_szyfru):
 def tryb_komputerowy(dlugosc_szyfru):
     print("Kod wygenerowany przez komputer.")
     return tworzenie_kodu(dlugosc_szyfru)
-    def przebieg_gry(tryb_gry, dlugosc_szyfru):
+def przebieg_gry(tryb_gry, dlugosc_szyfru):
     if tryb_gry == 1:
         kod = tryb_dla_graczy(dlugosc_szyfru)
     else:
@@ -45,7 +46,7 @@ def tryb_komputerowy(dlugosc_szyfru):
         print(f"Cyfr w kodzie, ale nie na swoich miejscach: {cyfry_poprawne}")
 
     
-        if miejsca_poprawne == dlugosc_kodu:
+        if miejsca_poprawne == dlugosc_szyfru:
             print(f"Gratulacje! Odgadłeś kod w {liczba_prob} próbach.")
             break
 
