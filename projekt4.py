@@ -4,6 +4,25 @@ def powitanie_i_parametry():
     tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
     dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrie: "))
     return tryb_gry, dlugosc_szyfru
+    
+    """
+    Funkcja powitanie_i_parametry() wita użytkownika i pobiera parametry gry.
+
+    Wyświetla także wiadomość powitalną, pyta użytkownika o wybór trybu gry oraz o
+    długość szyfru. Zwraca też wybrane parametry.
+
+    Zwracane parametry:
+    - int tryb_gry: wartość numeru trybu gry (1: dwóch graczy, 2: gra z komputerem)
+    - int dlugosc_szyfru: długość szyfru
+    
+    Przykład użycia funkcji: 
+   < Gracz wybiera 1 tryb > 
+   < Gracz wpisuje liczbę 4 >
+    tryb_gry, dlugosc_szyfru = powitanie_i_parametry()
+    print(f"Wybrany tryb gry: {1}")
+    print(f"Długość szyfru: {4})
+    
+    """
 
 def tworzenie_kodu(dlugosc_szyfru):
     return [random.randint(0, 9) for _ in range(dlugosc_szyfru)]
@@ -45,6 +64,29 @@ def tryb_dla_graczy(dlugosc_szyfru):
     print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfrowy, zapisz go lub zapamiętaj): ", end="")
     kod = [int(cyfra) for cyfra in input().strip()]
     return kod
+    def tryb_dla_graczy(dlugosc_szyfru):
+    """
+    Funkcja służy do wprowadzenia kodu przez pierwszego gracza.
+
+    Parametry:
+    dlugosc_szyfru (int): Długość kodu, który ma wprowadzić gracz.
+
+    Zwraca:
+    list: Lista cyfr, które zostały wprowadzone przez gracza.
+
+    Przykład użycia funkcji: 
+    
+    dlugosc_szyfru = 4
+    kod = tryb_dla_graczy(dlugosc_szyfru)
+    print(f"Gracz pierwszy wprowadził kod: {kod}")
+    """
+    
+
+# Przykład wywołania funkcji
+dlugosc_szyfru = 4
+kod = tryb_dla_graczy(dlugosc_szyfru)
+print(f"Gracz pierwszy wprowadził kod: {kod}")
+
 
 def tryb_komputerowy(dlugosc_szyfru):
     print("Kod wygenerowany przez komputer.")
