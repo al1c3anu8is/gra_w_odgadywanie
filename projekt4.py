@@ -164,6 +164,21 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
 def main():
     tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
     przebieg_gry(tryb_gry, dlugosc_szyfru) 
+    
+    """
+    Główna funkcja programu, która uruchamia grę.
+
+    Funkcja ta:
+    - Wywołuje funkcję powitanie_i_parametry(), aby pobrać tryb gry oraz liczbę cyfr w szyfrze od gracza.
+    - Przekazuje te dane do funkcji przebieg_gry(), która zarządza całą logiką rozgrywki w odgadywanie.
+
+    Zmienne:
+    - tryb_gry (int): Tryb gry wybrany przez gracza (1: dwóch graczy, 2: gra z komputerem).
+    - dlugosc_szyfru (int): Długość szyfru (liczba cyfr w szyfrze) wybrana przez gracza.
+
+    Przykład:
+    >>> main()
+    """
 
 if __name__ == "__main__":
     main() 
