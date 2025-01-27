@@ -61,10 +61,11 @@ def ocena_zgadywania(kod, zgadywanie):
     return miejsca_poprawne, cyfry_poprawne
 
 def tryb_dla_graczy(dlugosc_szyfru):
+    from getpass import getpass
     print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfrowy, zapisz go lub zapamiętaj): ", end="")
-    kod = [int(cyfra) for cyfra in input().strip()]
+    kod = [int(cyfra) for cyfra in getpass("").strip()]
     return kod
-    def tryb_dla_graczy(dlugosc_szyfru):
+    
     """
     Funkcja służy do wprowadzenia kodu przez pierwszego gracza.
 
@@ -80,17 +81,11 @@ def tryb_dla_graczy(dlugosc_szyfru):
     kod = tryb_dla_graczy(dlugosc_szyfru)
     print(f"Gracz pierwszy wprowadził kod: {kod}")
     """
-    
-
-# Przykład wywołania funkcji
-dlugosc_szyfru = 4
-kod = tryb_dla_graczy(dlugosc_szyfru)
-print(f"Gracz pierwszy wprowadził kod: {kod}")
-
 
 def tryb_komputerowy(dlugosc_szyfru):
     print("Kod wygenerowany przez komputer.")
     return tworzenie_kodu(dlugosc_szyfru)
+    
 def przebieg_gry(tryb_gry, dlugosc_szyfru):
     if tryb_gry == 1:
         kod = tryb_dla_graczy(dlugosc_szyfru)
@@ -110,7 +105,7 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
 
     
         if miejsca_poprawne == dlugosc_szyfru:
-            print(f"Gratulacje! Odgadłeś kod w {liczba_prob} próbach.")
+            print(f"Gratulacje! Szyfr został złamany w {liczba_prob} próbach.")
             break
 
 def main():
