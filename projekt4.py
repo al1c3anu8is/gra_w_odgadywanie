@@ -34,7 +34,7 @@ def wprowadz_zgadywanie(dlugosc_szyfru):
             return [int(cyfra) for cyfra in strona_zgadywania]
         print(f"Proszę wprowadzić dokładnie {dlugosc_szyfru} cyfr.")
 
-def ocena_zgadywania(kod, zgadywanie):
+def ocena_zgadywanie(kod, zgadywanie):
       """
     Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrie znajduje się na właściwych miejscach,
     oraz ile cyfr jest obecnych w szyfriie, ale na niewłaściwych miejscach.
@@ -49,7 +49,7 @@ def ocena_zgadywania(kod, zgadywanie):
         - cyfry_poprawne (int): Liczba cyfr, które gracz zgadł, ale są na niewłaściwych miejscach.
 
     Przykład użycia funkcji:
-    >>> ocena_zgadywania([1, 2, 3, 4], [1, 5, 3, 4])
+    >>> ocena_zgadywanie([1, 2, 3, 4], [1, 5, 3, 4])
     (2, 2)
 
     Wyjaśnienie otrzymanego wyniku:
@@ -95,7 +95,7 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
     liczba_prob = 0  
 
     while True:
-        zgadywanie = wprowadz_zgadywania(dlugosc_szyfru)  
+        zgadywanie = wprowadz_zgadywanie(dlugosc_szyfru)  
         liczba_prob += 1 
         miejsca_poprawne, cyfry_poprawne = ocena_zgadywanie(kod, zgadywanie)
 
