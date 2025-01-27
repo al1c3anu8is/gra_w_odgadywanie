@@ -56,6 +56,8 @@ def ocena_zgadywanie(kod, zgadywanie):
     - miejsca_poprawne: 2 (pierwsza i czwarta cyfra: 1 i 4)
     - cyfry_poprawne: 2 (trzecia cyfra 3 oraz druga cyfra 5 znajdują się w kodzie, ale na innych miejscach w szyfrze)
     """
+    if len(kod) != len(zgadywanie):
+    raise ValueError("Długości kodu i zgadywania muszą być takie same!")
     miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
     cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
     return miejsca_poprawne, cyfry_poprawne
