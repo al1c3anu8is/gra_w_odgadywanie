@@ -80,7 +80,7 @@ def wprowadz_zgadywanie(dlugosc_szyfru):
         strona_zgadywania = input(f"Wprowadź swój szyfr ({dlugosc_szyfru} cyfrowy): ")
         if len(strona_zgadywania) == dlugosc_szyfru and strona_zgadywania.isdigit():
             return [int(cyfra) for cyfra in strona_zgadywania]
-        print(f"Proszę wprowadzić dokładnie {dlugosc_szyfru} cyfr.")
+        print(f"Proszę wprowadzić szyfr dokładnie {dlugosc_szyfru} cyfrowy.")
 
 def ocena_zgadywanie(kod, zgadywanie):
     miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
