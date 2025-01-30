@@ -1,6 +1,6 @@
 import random
 def powitanie_i_parametry():
-"""
+    """
     Funkcja powitanie_i_parametry() wita użytkownika i pobiera parametry gry.
 
     Wyświetla także wiadomość powitalną, pyta użytkownika o wybór trybu gry oraz o
@@ -17,7 +17,7 @@ def powitanie_i_parametry():
     print(f"Wybrany tryb gry: {1}")
     print(f"Długość szyfru: {4})
     
-"""
+    """
     print("Witaj w grze w odgadywanie!")
     while True:
         tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
@@ -81,7 +81,7 @@ def wprowadz_zgadywanie(dlugosc_szyfru):
         print(f"Proszę wprowadzić szyfr dokładnie {dlugosc_szyfru} cyfrowy.")
 
 def ocena_zgadywanie(kod, zgadywanie):
-"""
+    """
     Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrze znajduje się na właściwych miejscach,
     oraz ile cyfr jest obecnych w szyfrze, ale na niewłaściwych miejscach.
 
@@ -101,7 +101,7 @@ def ocena_zgadywanie(kod, zgadywanie):
     Wyjaśnienie otrzymanego wyniku:
     - miejsca_poprawne: 2 (pierwsza i czwarta cyfra: 1 i 4)
     - cyfry_poprawne: 2 (trzecia cyfra 3 oraz druga cyfra 5 znajdują się w kodzie, ale na innych miejscach w szyfrze)
-"""
+    """
     miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
     cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
     return miejsca_poprawne, cyfry_poprawne
@@ -197,7 +197,7 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
             break
 
 def main():
-"""
+    """
     Główna funkcja programu, która uruchamia grę.
 
     Funkcja ta:
@@ -210,7 +210,7 @@ def main():
 
     Przykład:
     >>> main()
-"""
+    """
     tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
     przebieg_gry(tryb_gry, dlugosc_szyfru) 
     
