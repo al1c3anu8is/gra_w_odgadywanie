@@ -5,7 +5,7 @@
 ## **2. Stwórz środowisko venv:**
 • python -m venv odgadywanie <br>
 • odgadywanie\Scripts\activate (na systemie Windows) <br>
-• source odgadywanie/bin/activate (na systemie Unix albo MacOS) <br> 
+• source odgadywanie/bin/activate (na systemie Unix albo MacOS) <br> <br>
   Nasz kod nie wymaga instalowania dodatkowych bibliotek (random i getpass są częścią standardowej biblioteki Pythona <br> <br>
 • Instalacja przykładowej biblioteki - numpy: <br>
   • python -m pip install numpy <br>
