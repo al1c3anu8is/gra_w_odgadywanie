@@ -2,7 +2,7 @@ import random
 def powitanie_i_parametry():
     print("Witaj w grze w odgadywanie!")
     tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
-    dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrie: "))
+    dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrze: "))
     return tryb_gry, dlugosc_szyfru
     
     """
@@ -80,8 +80,8 @@ def ocena_zgadywanie(kod, zgadywanie):
     cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
     return miejsca_poprawne, cyfry_poprawne
     """
-    Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrie znajduje się na właściwych miejscach,
-    oraz ile cyfr jest obecnych w szyfriie, ale na niewłaściwych miejscach.
+    Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrze znajduje się na właściwych miejscach,
+    oraz ile cyfr jest obecnych w szyfrze, ale na niewłaściwych miejscach.
 
     Parametry:
     kod (list[int]): Lista cyfr, które stanowią prawdziwy kod do odgadnięcia.
