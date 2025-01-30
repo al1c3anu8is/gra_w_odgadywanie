@@ -1,18 +1,6 @@
 import random
 def powitanie_i_parametry():
-    print("Witaj w grze w odgadywanie!")
-    while True:
-        tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
-        if tryb_gry in [1, 2]:
-            break
-        else:
-            print("Niepoprawny wybór. Wybierz 1 lub 2.")
-    
-    dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrze: "))
-    return tryb_gry, dlugosc_szyfru
-
-    
-    """
+      """
     Funkcja powitanie_i_parametry() wita użytkownika i pobiera parametry gry.
 
     Wyświetla także wiadomość powitalną, pyta użytkownika o wybór trybu gry oraz o
@@ -30,6 +18,16 @@ def powitanie_i_parametry():
     print(f"Długość szyfru: {4})
     
     """
+    print("Witaj w grze w odgadywanie!")
+    while True:
+        tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
+        if tryb_gry in [1, 2]:
+            break
+        else:
+            print("Niepoprawny wybór. Wybierz 1 lub 2.")
+    
+    dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrze: "))
+    return tryb_gry, dlugosc_szyfru
 
 def tworzenie_kodu(dlugosc_szyfru):
     """
@@ -83,10 +81,7 @@ def wprowadz_zgadywanie(dlugosc_szyfru):
         print(f"Proszę wprowadzić szyfr dokładnie {dlugosc_szyfru} cyfrowy.")
 
 def ocena_zgadywanie(kod, zgadywanie):
-    miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
-    cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
-    return miejsca_poprawne, cyfry_poprawne
-    """
+        """
     Funkcja sprawdza, ile cyfr w podanym przez gracza szyfrze znajduje się na właściwych miejscach,
     oraz ile cyfr jest obecnych w szyfrze, ale na niewłaściwych miejscach.
 
@@ -107,13 +102,12 @@ def ocena_zgadywanie(kod, zgadywanie):
     - miejsca_poprawne: 2 (pierwsza i czwarta cyfra: 1 i 4)
     - cyfry_poprawne: 2 (trzecia cyfra 3 oraz druga cyfra 5 znajdują się w kodzie, ale na innych miejscach w szyfrze)
     """
+    miejsca_poprawne = sum(1 for i in range(len(kod)) if kod[i] == zgadywanie[i])
+    cyfry_poprawne = sum(min(kod.count(cyfra), zgadywanie.count(cyfra)) for cyfra in set(zgadywanie)) - miejsca_poprawne
+    return miejsca_poprawne, cyfry_poprawne
+   
 
 def tryb_dla_graczy(dlugosc_szyfru):
-    from getpass import getpass
-    print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfrowy, zapisz go lub zapamiętaj): ", end="")
-    kod = [int(cyfra) for cyfra in getpass("").strip()]
-    return kod
-    
     """
     Funkcja służy do wprowadzenia kodu przez pierwszego gracza.
 
@@ -129,6 +123,11 @@ def tryb_dla_graczy(dlugosc_szyfru):
     kod = tryb_dla_graczy(dlugosc_szyfru)
     print(f"Gracz pierwszy wprowadził kod: {kod}")
     """
+    from getpass import getpass
+    print(f"Gracz pierwszy: Wprowadź kod ({dlugosc_szyfru} cyfrowy, zapisz go lub zapamiętaj): ", end="")
+    kod = [int(cyfra) for cyfra in getpass("").strip()]
+    return kod
+    
 
 def tryb_komputerowy(dlugosc_szyfru):
     """
@@ -198,10 +197,7 @@ def przebieg_gry(tryb_gry, dlugosc_szyfru):
             break
 
 def main():
-    tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
-    przebieg_gry(tryb_gry, dlugosc_szyfru) 
-    
-    """
+      """
     Główna funkcja programu, która uruchamia grę.
 
     Funkcja ta:
@@ -215,6 +211,9 @@ def main():
     Przykład:
     >>> main()
     """
+    tryb_gry, dlugosc_szyfru = powitanie_i_parametry() 
+    przebieg_gry(tryb_gry, dlugosc_szyfru) 
+    
 
 if __name__ == "__main__":
     main() 
