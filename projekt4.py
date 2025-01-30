@@ -1,9 +1,16 @@
 import random
 def powitanie_i_parametry():
     print("Witaj w grze w odgadywanie!")
-    tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
+    while True:
+        tryb_gry = int(input("Wybierz tryb gry (1: dwóch graczy, 2: gra z komputerem): "))
+        if tryb_gry in [1, 2]:
+            break
+        else:
+            print("Niepoprawny wybór. Wybierz 1 lub 2.")
+    
     dlugosc_szyfru = int(input("Podaj liczbę cyfr w szyfrze: "))
     return tryb_gry, dlugosc_szyfru
+
     
     """
     Funkcja powitanie_i_parametry() wita użytkownika i pobiera parametry gry.
