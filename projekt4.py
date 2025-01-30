@@ -16,7 +16,7 @@ def powitanie_i_parametry():
     Funkcja powitanie_i_parametry() wita użytkownika i pobiera parametry gry.
 
     Wyświetla także wiadomość powitalną, pyta użytkownika o wybór trybu gry oraz o
-    długość szyfru. Zwraca też wybrane parametry.
+    długość szyfru. Zwraca też wybrane parametry. Gdy gracz poda inny tryb niż 1 lub 2 to gra wyrzuca błąd- trzeba poprawnie wprowadzić poprawne dane
 
     Zwracane parametry:
     - int tryb_gry: wartość numeru trybu gry (1: dwóch graczy, 2: gra z komputerem)
