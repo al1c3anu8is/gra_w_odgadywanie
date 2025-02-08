@@ -22,7 +22,7 @@
 • wygrana <br>
 
 ## **5. Osoby odpowiedzialne za projekt:**
-• Agnieszka Musiał (287391) - amusial14 <br>
+• amusial14 <br>
 • Kornelia Hubner (278946) - korneliahubn <br>
 • Katarzyna Jastrzębska (287369) - Katarzyna1a <br>
 • Aleksandra Radzik  (287366) - al1c3anu8is <br>
