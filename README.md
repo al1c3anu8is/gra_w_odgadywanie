@@ -23,6 +23,6 @@
 
 ## **5. Osoby odpowiedzialne za projekt:**
 • amusial14 <br>
-• Kornelia Hubner (278946) - korneliahubn <br>
-• Katarzyna Jastrzębska (287369) - Katarzyna1a <br>
-• Aleksandra Radzik  (287366) - al1c3anu8is <br>
+• <br>
+• <br>
+• <br>
